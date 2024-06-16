@@ -35,6 +35,8 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
                                 <h1 class="mb-4">Become A Teacher</h1>
+                                <form action="{{ route('insertTeacher') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <p>
                                 <form>
                                     <div class="row g-3">

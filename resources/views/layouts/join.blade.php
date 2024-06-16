@@ -21,7 +21,8 @@
                             <div class="row g-3">
                                 <div class="col-sm-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
+                                    <input type="text" id="gname" name="gname" class="form-control border-0" placeholder="Gurdian Name"value="{{ old('gname') }}"><br>
+                                        <!-- <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name"> -->
                                         <label for="gname">Gurdian Name</label>
                                         @error('gname')
                                             <p style="color: red">{{ $message }}</p>
@@ -30,7 +31,9 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control border-0" id="email" placeholder="Gurdian Email">
+                                    <!-- <input type="text" id="email" name="email" class="form-control" value="{{ old('email') }}"><br> -->
+                                    <input type="text" id="email" name="email" class="form-control border-0" placeholder="Gurdian Email" value="{{ old('email') }}"><br>
+                                        <!-- <input type="email" class="form-control border-0" id="email" placeholder="Gurdian Email"> -->
                                         <label for="email">Gurdian Email</label>
                                         @error('email')
                                             <p style="color: red">{{ $message }}</p>
@@ -39,7 +42,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
+                                    <input type="text" id="cname" name="cname" class="form-control border-0" placeholder="Child Name" value="{{ old('cname') }}"><br>
                                         <label for="cname">Child Name</label>
                                         @error('cname')
                                             <p style="color: red">{{ $message }}</p>
@@ -48,7 +51,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="age" placeholder="Child Age">
+                                    <input type="text" id="age" name="age" class="form-control border-0" placeholder="Child Age" value="{{ old('age') }}"><br>
                                         <label for="age">Child Age</label>
                                         @error('age')
                                             <p style="color: red">{{ $message }}</p>
@@ -57,7 +60,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" placeholder="Gurdian Phone Number" id="phone">
+                                     <input type="text" id="phone" name="phone" class="form-control border-0" placeholder="Gurdian Phone Number" value="{{ old('phone') }}"><br>
                                         <label for="phone">Gurdian Phone Number</label>
                                         @error('phone')
                                             <p style="color: red">{{ $message }}</p>
@@ -74,6 +77,10 @@
                                     <option value="rel" {{ old('class') == 'rel' ? 'selected' : '' }}>Religion & History</option>
                                     <option value="know" {{ old('class') == 'know' ? 'selected' : '' }}>General Knowledge</option>
                                 </select>
+                                @error('class')
+                                            <p style="color: red">{{ $message }}</p>
+                                        @enderror
+                                
                                 <br><br>
                                 <button class="btn btn-primary w-100 py-3" type="submit" value="submit">Submit</button>
                             </div>
