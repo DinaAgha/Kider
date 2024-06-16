@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use App\Models\Cls;
 class JoinModel extends Model
 {
     use HasFactory, SoftDeletes;
@@ -16,7 +16,10 @@ class JoinModel extends Model
         'cname',
         'age',
         'phone',
-        'class'
+        'class_id'
     ];
 
+    public function class(){
+        return $this->belongsTo(Cls::class);
+    }
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('cname', 100);
             $table->string('age', 2);
             $table->string('phone', 25);
-            $table->boolean('class_id')->constrained('classes');
+            $table->foreignId('class_id')->constrained('classes');
             $table->softDeletes();
             $table->timestamps();
         });

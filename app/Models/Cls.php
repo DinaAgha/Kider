@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\JoinModels;
+use App\Models\JoinModel;
 
 class Cls extends Model
 {

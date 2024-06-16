@@ -40,13 +40,13 @@
       <td>{{ $kid->phone }}</td>
       <td>{{ $kid->class }}</td>
 
-        <td><a href="{{ route('editKids', $client->id)}}">Edit</a></td>
-        <td><a href="{{ route('showKids', $client->id)}}">Show</a></td>
+        <td><a href="{{ route('editKids', $kid->id)}}">Edit</a></td>
+        <td><a href="{{ route('showKids', $kid->id)}}">Show</a></td>
         <td>
           <form action="{{ route('delKid')}}" method="POST">
             @csrf
             @method('DELETE')
-            <input type="hidden" value="{{ $client->id }}" name="id">
+            <input type="hidden" value="{{ $kid->id }}" name="id">
             <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this client?')">
           </form>
         </td>
